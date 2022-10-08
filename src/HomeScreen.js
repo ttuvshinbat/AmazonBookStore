@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Search from '../components/Search'
-const HomeScreen = () => {
+const HomeScreen = (props) => {
+  const [searchValue,setSearchValue]=useState("hi")
+  console.log(searchValue)
   return (
     <View>
-     <Search/>
+     <Search search={searchValue} setSearch={setSearchValue}/>
+     <Text>{searchValue}</Text>
     </View>
   )
 }

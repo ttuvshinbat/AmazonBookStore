@@ -1,14 +1,17 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
 import { Feather } from '@expo/vector-icons'; 
-const Search = () => {
+const Search = ({search, setSearch}) => {
+  // console.log(search)
   return (
     <View style={styles.searchPanel}>
       <Feather style={styles.Search} name="search" size={24} color="#535c68" />
       <TextInput 
+      value={search}
+     onChangeText={setSearch}
       style={styles.text}
        placeholder="search"
-       autoCapitalize='none'>Search</TextInput>
+       autoCapitalize='none'/>
   </View>
   )
 }

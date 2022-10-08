@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Search from './components/Search';
 const Stack = createStackNavigator();
 import HomeScreen from './src/HomeScreen';
 
@@ -10,6 +11,7 @@ export default function App() {
  <NavigationContainer>
   <Stack.Navigator initialRouteName="home">
     <Stack.Screen name="Home" component={HomeScreen} options={{"title":"Amazon BookStore"}} />
+    <Stack.Screen name="Search" component={Search} />
   </Stack.Navigator>
  </NavigationContainer>
   );
