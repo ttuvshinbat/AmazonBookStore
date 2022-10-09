@@ -8,12 +8,12 @@ import HomeScreen from './src/HomeScreen';
 
 export default function App() {
   return (
- <NavigationContainer>
-  <Stack.Navigator initialRouteName="home">
-    <Stack.Screen name="Home" component={HomeScreen} options={{"title":"Amazon BookStore"}} />
-    <Stack.Screen name="Search" component={Search} />
-  </Stack.Navigator>
- </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="home">
+        <Stack.Screen name="Home" component={HomeScreen} options={{ "title": "Amazon BookStore" }} />
+        <Stack.Screen name="Search" component={Search} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
