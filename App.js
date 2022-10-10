@@ -2,9 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Search from './components/Search';
+import useCategory from './src/hooks/useCategory';
+import Search from './src/components/Search';
 const Stack = createStackNavigator();
-import HomeScreen from './src/HomeScreen';
+import HomeScreen from './src/Screens/HomeScreen';
 
 export default function App() {
   return (
@@ -12,11 +13,9 @@ export default function App() {
       <Stack.Navigator initialRouteName="home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ "title": "Amazon BookStore" }} />
         <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen name="Category" component={useCategory} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});
