@@ -4,16 +4,19 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import useCategory from './src/hooks/useCategory';
 import Search from './src/components/Search';
-const Stack = createStackNavigator();
 import HomeScreen from './src/Screens/HomeScreen';
+import BookDetailScreen from './src/Screens/BookDetailScreen';
+const Stack = createStackNavigator();
+
+
 
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ "title": "Amazon BookStore" }} />
-        <Stack.Screen name="Search" component={Search} />
-        <Stack.Screen name="Category" component={useCategory} />
+        <Stack.Screen name="detail" component={BookDetailScreen} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -6,7 +6,7 @@ import useCategory from '../hooks/useCategory'
 import CategoryBookList from '../components/CategoryBookList'
 import Spinner from '../components/Spinner'
 
-const HomeScreen = () => {
+const HomeScreen = (props) => {
   const [localSearchText, setLocalSearchText] = useState("")
   const [serverSearchText, setServerSearchText] = useState("")
   const [categories, errorMessage, loading] = useCategory()
@@ -15,6 +15,8 @@ const HomeScreen = () => {
     setServerSearchText(localSearchText)
 
   }
+
+
 
   return (
     <View style={styles.ActivityIndicator}>

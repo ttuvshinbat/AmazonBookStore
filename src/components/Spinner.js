@@ -6,7 +6,7 @@ const Spinner = () => {
     return (
         <View style={styles.ActivityIndicator}>
             <ActivityIndicator />
-            <Text>Please wait</Text>
+            <Text>Please wait !!!</Text>
         </View>
     )
 }

@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         marginHorizontal: 10,
         marginVertical: 10,
+
     },
     text: {
         flex: 1,
