@@ -6,7 +6,7 @@ import useCategory from '../hooks/useCategory'
 import CategoryBookList from '../components/CategoryBookList'
 import Spinner from '../components/Spinner'
 
-const HomeScreen = (props) => {
+const HomeScreen = () => {
   const [localSearchText, setLocalSearchText] = useState("")
   const [serverSearchText, setServerSearchText] = useState("")
   const [categories, errorMessage, loading] = useCategory()

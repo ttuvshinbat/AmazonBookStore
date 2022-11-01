@@ -1,9 +1,15 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
-
+import useBook from '../hooks/useBook'
 const BookDetailScreen = (props) => {
 
-    const book = props.route.params.data
+    const BookId = props.route.params.id
+
+    const [book, errorMessage] = useBook(BookId)
+    if (errorMessage) {
+        return (<Text> error : {errorMessage}</Text>)
+    }
+    if (!book) { return null }
     return (
         <View>
             <Text>BookDetailScreen</Text>
@@ -13,7 +19,6 @@ const BookDetailScreen = (props) => {
             <Text>{book.price}</Text>
             <Text>{book.balance}</Text>
             <Text>{book.content}</Text>
-
         </View>
     )
 }

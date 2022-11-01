@@ -6,7 +6,7 @@ const Book = ({ data }) => {
     const navigation = useNavigation()
     return (
         <TouchableOpacity
-            onPress={() => navigation.navigate("detail", { data: data })} style={styles.pic}>
+            onPress={() => navigation.navigate("detail", { id: data.id })} style={styles.pic}>
             <Image style={{ width: 250, height: 300 }} source={{ uri: "https://data.internom.mn/media/images" + data.photo }} />
             <Text style={styles.center}>Зохиолч: {data.author}</Text>
             <View style={{ flexDirection: "row", alignItems: "center", justifyContent: 'space-between' }}>
