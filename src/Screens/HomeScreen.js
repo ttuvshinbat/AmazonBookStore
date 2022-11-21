@@ -1,12 +1,12 @@
-import { StyleSheet, Text, View, ScrollView, ActivityIndicator } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, ActivityIndicator, Button, Alert } from 'react-native'
 
-import React, { useState } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import Search from '../components/Search'
 import useCategory from '../hooks/useCategory'
 import CategoryBookList from '../components/CategoryBookList'
 import Spinner from '../components/Spinner'
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const [localSearchText, setLocalSearchText] = useState("")
   const [serverSearchText, setServerSearchText] = useState("")
   const [categories, errorMessage, loading] = useCategory()
@@ -15,6 +15,11 @@ const HomeScreen = () => {
     setServerSearchText(localSearchText)
 
   }
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => <Text style={{ marginLeft: 6 }} ><Button title="search" onPress={() => Alert.alert("search text " + localSearchText)} /></Text>
+    })
+  }, [navigation, localSearchText])
 
 
 

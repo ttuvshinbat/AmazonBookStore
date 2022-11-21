@@ -13,7 +13,9 @@ const Book = ({ data }) => {
                 <Text style={{ marginHorizontal: 15, padding: 5, }}>{thousandify(data.price)}₮</Text>
                 <Text style={{ marginHorizontal: 15 }}>Үлдэгдэл:{data.balance > 0 ? data.balance : "Дууссан"} </Text>
             </View>
+
         </TouchableOpacity>
+
 
     )
 }
